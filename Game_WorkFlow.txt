@@ -1,0 +1,57 @@
+Bricks Breaker Game Workflow:
+--------------------------------
+- Main file ( Loop Function )
+- Game || Menu scene
+- Game Over & Restart Scene
+- levels scenes:
+  	- level one 	
+	- level two   
+   	- level three 
+  		Note : The game has difficulty levels that control the ball speed.
+- lives
+		Note : The player has multiple lives,if the ball misses the paddle, one life is lost. If all lives are lost, the game is over.
+
+- score 
+- paddle
+- ball
+- bricks: 
+   	- one hit 
+   	- multiple hits
+		Note:The first hit to a brick causes it to crack, and the second causes it to disappear.
+   	- unbreakable ( Bonus )
+
+- Paddle & Ball Collision 
+- Ball & Bricks Collision
+
+- powers: 
+	- Life power          ( Bonus )
+		Note:- After hitting multiple bricks, a new life icon is dropped.If the paddle catches the dropped icon, the player earns a new life.
+	- balls power         ( Bonus )	
+   	- paddle extend power ( Bonus )
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+amany & somaya 
+- levels
+ 	- design 
+	- build
+osama 
+- bricks
+
+
+omar & salah :
+- Ball & Bricks Collision
+- ball 
+- Ball & Wall Collision
+- Paddle & Ball Collision 
+- paddle
+- score 
+- lives
+
+
+
+somaya :
+- Game || Menu scene
+- Game Over & Restart Scene
+- powers
+
+

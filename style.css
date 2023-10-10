@@ -1,0 +1,228 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    background-image: url(img/Pi-Slices.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#menu,
+#up-level,
+#game-over,
+#help-menu,
+#about-us {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: fit-content;
+    padding: 2rem;
+    margin-top: 6%;
+    color: aliceblue;
+    background-color: rgba(81, 81, 81, 0.5);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#menu h1 {
+    font-size: 4rem;
+}
+
+#menu h1 span {
+    font-size: 5rem;
+}
+.start-menu{
+    width: 500px;
+}
+.start-menu,
+.upLevel-menu div,
+.gameOver-menu div {
+    text-align: center;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 1rem 5rem;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 2px solid rgb(38, 38, 80);
+}
+
+.start-menu:hover,
+.upLevel-menu div:hover,
+.gameOver-menu div:hover {
+    background-color: rgb(38, 38, 80);
+}
+
+/* canvas{
+    display: block;
+} */
+
+.dashboard {
+    display: flex;
+    visibility: hidden;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
+    background-color: #000;
+}
+.dashboard i{
+    margin-right: 1rem;
+}
+#mute, #icon{
+    cursor: pointer;
+}
+#up-level,
+#game-over,
+.dashboard div {
+    font-size: 2rem;
+    padding: 2rem;
+
+}
+
+#game-over,
+#up-level {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+
+#game-over h1 {
+    font-size: 10rem;
+    color: rgb(203, 203, 203);
+    margin: 1rem 0;
+    font-weight: 200;
+}
+
+
+
+#up-level h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, #f32170, #ff6b08,
+            #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    margin: 1rem 0;
+    font-weight: 200;
+}
+
+.upLevel-menu div,
+.gameOver-menu div,
+.gameOver-menu div {
+    display: inline-block;
+}
+
+#about-us,
+#help-menu {
+    display: none;
+}
+
+.insturctions>span {
+    font-size: 2rem;
+    color: rgb(203, 203, 203);
+    margin: 1rem 0;
+    font-weight: 200;
+}
+
+#exit-about,
+#exit-help {
+    font-size: 3rem;
+    left: 1vw;
+    margin: 2vh 32vw 5vh 0;
+    cursor: pointer;
+}
+
+/* #exit-about:hover,
+#exit-help:hover {
+    margin: 2vh 35vw 5vh 0;
+}
+ */
+.instruct-icon {
+    display: inline-block;
+    font-size: 2rem;
+    margin: 3vh 1vw 3vh 20vw;
+}
+
+
+#about-us>p {
+    text-align: center;
+    font-size: large;
+    font-weight: 400;
+}
+
+
+.team-member {
+    background-color: rgb(22, 20, 20);
+    margin: 2vh 0vw;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.links {
+    text-decoration: none;
+    color: white;
+    margin: 2vh 5vw;
+    background: linear-gradient(to left, #f32170, #ff6b08,
+            #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+
+.links:hover {
+    background: linear-gradient(to right, #f32170, #ff6b08,
+            #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+#startshow {
+    top: 20vw;
+    left: 45vw;
+    direction: ltr;
+    position: absolute;
+    font-size: 4vw;
+    background: linear-gradient(to right, #f32170,
+            #ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation-name: Three;
+    animation-duration: 5s;
+}
+
+@keyframes Three {
+    50% {
+        transform: scale(3);
+    }
+
+    75% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
