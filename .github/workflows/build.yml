@@ -18,3 +18,4 @@ jobs:
             context: .
             push: true
             tags: maslenkovaso/brickbreakerapp:latest
+            
