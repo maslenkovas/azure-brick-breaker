@@ -152,6 +152,12 @@ function outOfBounds() {
     powers = [];
     newGame();
     if (lives === 0) {
+        const { addUserScore } = require("./index");
+
+        // Call this function when the game ends with the player's username and score
+        addUserScore(0, "username", score);
+
+
         document.getElementById('game-over').style.display = 'flex';
         aud.src = "media/gameOver.wav";
         aud.play().catch((err) => { console.log(err); });
