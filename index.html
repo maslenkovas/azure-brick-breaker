@@ -56,25 +56,10 @@
         document.getElementById("loginButton").addEventListener("click", function() {
             var username = prompt("Enter your username:");
             if (username !== null) {
-                // Make an API call to store the username on the server
-                fetch('/store-username', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ username: username })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data); // Log the response from the server
-                    // Redirect to the main page
-                    window.location.href = "main.html";
-                })
-                .catch(error => {
-                    console.error(error);
-                });
+                // You can save the username in your app here, for example, using local storage
+                localStorage.setItem("username", username);
+                window.location.href = "game.html"; // Redirect to your main page
             }
         });
     </script>
-</body>
 </html>
