@@ -10,6 +10,13 @@ on:
       - lana_db
 
 jobs:
+  install_package:
+    name: Install Packages
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Cosmos 
+        run: npm install @azure/cosmos 
+
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
