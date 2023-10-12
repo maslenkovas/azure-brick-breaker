@@ -2,7 +2,7 @@
 import { CosmosClient } from "@azure/cosmos";
 
 const endpoint = "https://brickbreakerdb.documents.azure.com:443/";
-const key = "AccountEndpoint=https://brickbreakerdb.documents.azure.com:443/;AccountKey=NFLEWPqonMMEXoT2wPxKyubRTY3fv9h8VHNrO8fx84pKhFmIsP39cz8VjhNcIZOhEoNg3sJ0GUx0ACDbbQqXYQ==;";
+const key = "NFLEWPqonMMEXoT2wPxKyubRTY3fv9h8VHNrO8fx84pKhFmIsP39cz8VjhNcIZOhEoNg3sJ0GUx0ACDbbQqXYQ==;";
 
 // Uniqueness for database and container
 const timeStamp = + new Date();
