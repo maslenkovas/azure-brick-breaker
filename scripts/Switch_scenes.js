@@ -152,9 +152,15 @@ function outOfBounds() {
     powers = [];
     newGame();
     if (lives === 0) {
+
         document.getElementById('game-over').style.display = 'flex';
         aud.src = "media/gameOver.wav";
         aud.play().catch((err) => { console.log(err); });
+
+        // const { addUserScore } = require("./cosmosdb.js");
+        // // Call this function when the game ends with the player's username and score
+        // addUserScore(0, "username", score);
+
         score = 0;
 
         // isPause = false

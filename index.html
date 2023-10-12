@@ -2,115 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="#">
-    <link rel="icon" href="./img/WhatsApp Image 2023-01-31 at 15.19.35.jpg">
-    <title>Break bricks</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./img/your-icon.png"> <!-- Replace with your icon URL -->
+    <title>Welcome to My App</title>
+    <link rel="stylesheet" href="style.css"> <!-- Add your CSS stylesheet link here -->
+    <style>
+        /* Center content vertically and horizontally */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Match the style of the other buttons */
+        #login-section {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+            color: white; /* Set the font color to white */
+            margin-bottom: 20px;
+        }
+
+        #loginButton {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #loginButton:hover {
+            background-color: #2980b9;
+        }
+    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <script src="scripts/main.js" defer></script>
-    <script src="scripts/Switch_scenes.js" defer></script>
-    <script src="scripts/paddle.js" defer></script>
-    <script src="scripts/ball.js" defer></script>
-    <script src="scripts/Levels.js" defer></script>
-    <script src="scripts/bricks.js" defer></script>
-    <script src="scripts/powers.js" defer></script>
-    <script src="scripts/sound.js" defer></script>
-    <script src="scripts/game.js" defer></script>
 </head>
-
 <body>
     <section id="menu">
-        <h1>Bricks Breaker</h1>
-        <div class="start-menu" id="start">Start Game</div>
-        <div class="start-menu" id="help">How to play</div>
-        <div class="start-menu" id="about">About US</div>
+        <h1>Welcome to Brick Breaker (UPD: MongoDB)</h1>
+        <p>Please log in to continue:</p>
+        <button id="loginButton" class="start-menu">Log In</button>
     </section>
-
-    <section id="help-menu">
-        <i id="exit-help" class="fa fa-backward" aria-hidden="true"></i>
-        <div class="insturctions">
-            <span class="instruct">Serve Ball</span>
-            <i class="instruct-icon" aria-hidden="true">Spacebar</i>
-        </div>
-        <div class="insturctions">
-            <span class="instruct">Move Left</span>
-            <i class="fa fa-arrow-left instruct-icon" aria-hidden="true"></i>
-        </div>
-        <div class="insturctions">
-            <span class="instruct">Move Right</span>
-            <i class="fa fa-arrow-right instruct-icon" aria-hidden="true"></i>
-        </div>
-        <div class="insturctions">
-            <span class="instruct">Pause Game</span>
-            <i class="instruct-icon" aria-hidden="true">ESC</i>
-        </div>
-    </section>
-
-    <section id="about-us">
-        <i id="exit-about" class="fa fa-backward" aria-hidden="true"></i>
-        <p>This Game Was Made 19th of Jan 2023.<br>
-            It Was Made By A Group of ITI Students As an Implmentation of Studying JavaScript.<br>
-            We Wish You Have Fun Time Playing.<br>
-            You Can Get in Touch With Us<br><br>
-            Team Members: <br>
-        </p>
-        <div class="team-member">
-            <p>Amany Khalid Mohamed</p>
-            <a class="links" href="https://www.linkedin.com/in/amany-khaled-mohamed/" target="_blank">LinkedIn</a>
-            <a class="links" href="https://github.com/Amanikhaled" target="_blank">GitHub</a>
-        </div>
-
-
-        <div class="team-member">
-            <p>Mohamed Osama Amasha</p>
-            <a class="links" href="https://www.linkedin.com/in/mohamed-osama-820a10173/" target="_blank">LinkedIn</a>
-            <a class="links" href="https://github.com/MohamedOsama298" target="_blank">GitHub</a>
-        </div>
-
-
-        <div class="team-member">
-            <p>Mohamed Salah Masoud</p>
-            <a class="links" href="https://www.linkedin.com/in/mohamed-salah-masoud-a208b8128/"
-                target="_blank">LinkedIn</a>
-            <a class="links" href="https://github.com/mohamedsalah173" target="_blank">GitHub</a>
-        </div>
-
-
-        <div class="team-member">
-            <p>Omar Amgad</p>
-            <a class="links" href="https://www.linkedin.com/in/omar-amgad-583b3b1a9/" target="_blank">LinkedIn</a>
-            <a class="links" href="https://github.com/omaramgad1" target="_blank">GitHub</a>
-        </div>
-
-
-
-    </section>
-
-    <section id="up-level">
-        <img src="img/rocket-312767.png" width="20%" alt="">
-        <h1></h1>
-        <div class="upLevel-menu">
-            <div id="next-level">Next level</div>
-            <div id="return-menu-level">Main menu</div>
-        </div>
-    </section>
-
-    <section id="game-over">
-        <img src="img/Skull.png" width="25%" alt="">
-        <h1>GAME OVER</h1>
-        <div class="gameOver-menu">
-            <div id="restart-level">Replay level</div>
-            <div id="return-menu">Main menu</div>
-        </div>
-    </section>
-
-    <section>
-        <div id="startshow"></div>
-    </section>
-</body>
+    <script src="https://unpkg.com/@azure/cosmos"></script>
+    <script>
+        document.getElementById("loginButton").addEventListener("click", function() {
+            var username = prompt("Enter your username:");
+            if (username !== null) {
+                localStorage.setItem("username", username);
+                
+                // Send the username to the backend for saving
+                fetch('/addUsername', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ username: username })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Username saved successfully:', data);
+                    window.location.href = "game.html"; // Redirect to your main page
+                })
+                .catch(error => {
+                    console.error('Error saving username:', error);
+                });
+            }
+        });
+    </script>
 
 </html>
