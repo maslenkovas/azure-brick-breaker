@@ -2,7 +2,7 @@
   "$schema": "https://github.com/Azure/data-api-builder/releases/download/v0.8.52/dab.draft.schema.json",
   "data-source": {
     "database-type": "cosmosdb_nosql",
-    "connection-string": "@env('DATABASE_CONNECTION_STRING')",
+    "connection-string": "AccountEndpoint=https://brickbreakerdb.documents.azure.com:443/;AccountKey=NFLEWPqonMMEXoT2wPxKyubRTY3fv9h8VHNrO8fx84pKhFmIsP39cz8VjhNcIZOhEoNg3sJ0GUx0ACDbbQqXYQ==;",
     "options": {
       "database": "ScoreDB",
       "container": "Container1",
