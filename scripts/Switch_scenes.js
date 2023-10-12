@@ -157,10 +157,38 @@ function outOfBounds() {
         aud.src = "media/gameOver.wav";
         aud.play().catch((err) => { console.log(err); });
 
-        const { addUserScore } = require("./cosmosdb.js");
+        const { CosmosClient } = require("@azure/cosmos");
 
-        // Call this function when the game ends with the player's username and score
-        addUserScore(0, "username", score);
+        const endpoint = "https://brickbreakerdb.documents.azure.com:443/";
+        const key = "NFLEWPqonMMEXoT2wPxKyubRTY3fv9h8VHNrO8fx84pKhFmIsP39cz8VjhNcIZOhEoNg3sJ0GUx0ACDbbQqXYQ==";
+
+        const client = new CosmosClient({ endpoint, key });
+        const databaseId = "ScoreDB";
+        const containerId = "Container1";
+
+        async function insertData() {
+            const database = client.database(databaseId);
+            const container = database.container(containerId);
+          
+            const item = {
+              id: "UNIQUE_ID",
+              username: "username",
+              score: 100,
+            };
+          
+            try {
+              const { resource: createdItem } = await container.items.create(item);
+              console.log(`Item with id ${createdItem.id} was created.`);
+            } catch (error) {
+              console.error("Error inserting data:", error);
+            }
+          }
+          
+        insertData();
+
+        // const { addUserScore } = require("./cosmosdb.js");
+        // // Call this function when the game ends with the player's username and score
+        // addUserScore(0, "username", score);
 
         score = 0;
 
