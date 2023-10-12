@@ -4,10 +4,9 @@ Add your CosmosDB NoSQL database schema in this file
 
 For example:
 
-type User @model {
+type Book @model {
   id: ID
-  username: String
-  score: Int
+  title: String
 }
 
 """
