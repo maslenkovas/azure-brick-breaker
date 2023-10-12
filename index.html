@@ -91,13 +91,14 @@
                     try {
                     const { resource: createdItem } = await container.items.create(item);
                     console.log(`Item with id ${createdItem.id} was created.`);
+                    window.location.href = "game.html"; 
                     } catch (error) {
                     console.error("Error inserting data:", error);
                     }
                 }
                 
                 insertData();
-                window.location.href = "game.html"; // Redirect to your main page
+                // window.location.href = "game.html"; // Redirect to your main page
             }
         });
     </script>
