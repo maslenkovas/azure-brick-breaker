@@ -157,7 +157,7 @@ function outOfBounds() {
         aud.src = "media/gameOver.wav";
         aud.play().catch((err) => { console.log(err); });
 
-        const { addUserScore } = require("./index.js");
+        const { addUserScore } = require("./cosmosdb.js");
 
         // Call this function when the game ends with the player's username and score
         addUserScore(0, "username", score);
