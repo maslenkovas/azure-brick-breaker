@@ -5,22 +5,22 @@ const port = 3000; // Choose an appropriate port
 
 const { MongoClient } = require('mongodb');
 
-const uri = 'mongodb://brickbreakerappdb:8zG0ZafjLVYoFHiUKzrj2UUUUhp2EL2Hhx3CgGNGT1KpiYm4IozeqhLKSrVXT1O7sR2T7WTML3qUACDbqjBt9Q==@brickbreakerappdb.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@brickbreakerappdb@'; // Replace with your Cosmos DB URI
+const uri = 'mongodb://brickbreakerappdb:8zG0ZafjLVYoFHiUKzrj2UUUUhp2EL2Hhx3CgGNGT1KpiYm4IozeqhLKSrVXT1O7sR2T7WTML3qUACDbqjBt9Q==@brickbreakerappdb.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@brickbreakerappdb@'; 
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(express.json());
 
-app.post('/addScore', async (req, res) => {
-    const { username, score } = req.body;
+app.post('/addUsername', async (req, res) => {
+    const { username } = req.body;
     const collection = client.db('ScoreDB').collection('Collection1');
 
     try {
-        const result = await collection.insertOne({ username, score });
-        console.log(`Inserted a document with _id: ${result.insertedId}`);
-        res.status(200).send('Score saved successfully.');
+        const result = await collection.insertOne({ username });
+        console.log(`Username saved with _id: ${result.insertedId}`);
+        res.status(200).json({ message: 'Username saved successfully' });
     } catch (error) {
-        console.error('Error inserting data: ', error);
-        res.status(500).send('Error saving score.');
+        console.error('Error saving username: ', error);
+        res.status(500).json({ message: 'Error saving username' });
     }
 });
 
