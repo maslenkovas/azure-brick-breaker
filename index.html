@@ -50,7 +50,7 @@
         <p>Please log in to continue:</p>
         <button id="loginButton" class="start-menu">Log In</button>
     </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/@azure/cosmos"></script>
     <script>
         // Add JavaScript to handle the login button click event
         document.getElementById("loginButton").addEventListener("click", function() {
@@ -58,48 +58,47 @@
             if (username !== null) {
                 // You can save the username in your app here, for example, using local storage
                 localStorage.setItem("username", username);
-
-                const { CosmosClient } = require("@azure/cosmos");
-                const endpoint = "https://brickbreakerdb.documents.azure.com:443/";
-                const key = "NFLEWPqonMMEXoT2wPxKyubRTY3fv9h8VHNrO8fx84pKhFmIsP39cz8VjhNcIZOhEoNg3sJ0GUx0ACDbbQqXYQ==";
-                const client = new CosmosClient({ endpoint, key });
-                const databaseId = "ScoreDB";
-                const containerId = "Container1";
-                const partitionKeyPath = ["/id"]
-
-                async function insertData() {
-                    // Create database if it doesn't exist
-                    const { database } = await cosmosClient.databases.createIfNotExists({ id: databaseId });
-                    console.log(`${database.id} database ready`);
-                    // Create container if it doesn't exist
-                    const { container } = await database.containers.createIfNotExists({
-                        id: containerId,
-                        partitionKey: {
-                            paths: partitionKeyPath
-                        }
-                    });
-                    console.log(`${container.id} container ready`);
-                    // const database = client.database(databaseId);
-                    // const container = database.container(containerId);
-                
-                    const item = {
-                    id: 0,
-                    username: "username",
-                    score: 100,
-                    };
-                
-                    try {
-                    const { resource: createdItem } = await container.items.create(item);
-                    console.log(`Item with id ${createdItem.id} was created.`);
-                    window.location.href = "game.html"; 
-                    } catch (error) {
-                    console.error("Error inserting data:", error);
-                    }
-                }
-                
                 insertData();
-                // window.location.href = "game.html"; // Redirect to your main page
             }
         });
+
+
+        async function insertData() {
+            const endpoint = "https://brickbreakerdb.documents.azure.com:443/";
+            const key = "NFLEWPqonMMEXoT2wPxKyubRTY3fv9h8VHNrO8fx84pKhFmIsP39cz8VjhNcIZOhEoNg3sJ0GUx0ACDbbQqXYQ==";
+            const client = new CosmosClient({ endpoint, key });
+            const databaseId = "ScoreDB";
+            const containerId = "Container1";
+            const partitionKeyPath = ["/id"]
+            
+            // Create database if it doesn't exist
+            const { database } = await cosmosClient.databases.createIfNotExists({ id: databaseId });
+            console.log(`${database.id} database ready`);
+            // Create container if it doesn't exist
+            const { container } = await database.containers.createIfNotExists({
+                id: containerId,
+                partitionKey: {
+                    paths: partitionKeyPath
+                }
+            });
+            console.log(`${container.id} container ready`);
+            // const database = client.database(databaseId);
+            // const container = database.container(containerId);
+        
+            const item = {
+            id: 0,
+            username: "username",
+            score: 100,
+            };
+        
+            try {
+            const { resource: createdItem } = await container.items.create(item);
+            console.log(`Item with id ${createdItem.id} was created.`);
+            window.location.href = "game.html"; 
+            } catch (error) {
+            console.error("Error inserting data:", error);
+            }
+        }
+        
     </script>
 </html>
