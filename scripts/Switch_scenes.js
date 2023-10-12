@@ -160,7 +160,7 @@ function outOfBounds() {
         const { addUserScore } = require("./index.js");
 
         // Call this function when the game ends with the player's username and score
-        addUserScore0(, "username", score);
+        addUserScore(0, "username", score);
 
         score = 0;
 
